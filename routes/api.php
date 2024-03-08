@@ -26,3 +26,16 @@ Route::get('nome/nascimento/cidade' , function (Request $request){
     return ' Meu nome é ' . $nome . ' nasci no ano de ' . $nascimento . ' na cidade de ' . $cidade;
 
 }); 
+
+Route::get('calculadora' , function (Request $request){
+
+    $primeiraEntrada = $request->input('primeiraNota');
+
+    $segundaEntrada = $request->input('segundaNota');
+
+    $resultado = ($primeiraEntrada + $segundaEntrada);
+
+    return $resultado;
+
+
+});
