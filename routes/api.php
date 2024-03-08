@@ -39,3 +39,16 @@ Route::get('calculadora' , function (Request $request){
 
 
 });
+
+Route::get('subtraçao' , function (Request $request){
+
+    $primeiroNum = $request->input('number1');
+    $segundoNum = $request->input('number2');
+    $terceiroNum = $request->input('number3');
+
+$resultado = $primeiroNum - $segundoNum - $terceiroNum;
+
+return $resultado;
+
+
+});
