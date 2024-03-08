@@ -14,3 +14,15 @@ Route::get('naise', function (Request $request) {
 
     return 'Meu nome é ' . $nome . ', tenho ' . $idade . ' anos de idade';
 });
+
+Route::get('nome/nascimento/cidade' , function (Request $request){ 
+
+    $nome = $request->input('name'); 
+
+    $nascimento = $request->input('nasci');  
+   
+    $cidade = $request->input('cidade'); 
+
+    return ' Meu nome é ' . $nome . ' nasci no ano de ' . $nascimento . ' na cidade de ' . $cidade;
+
+}); 
