@@ -157,3 +157,13 @@ Route::get('compra' , function (Request $request){
     return ' a quantidade de pontos adquiridos é de ' . $pontos;
 
 });
+
+Route::get('vendas' , function (Request $request){
+
+    $valorVendas = $request->input('value');
+    $comissao = 5;
+    $resultado = $valorVendas / 100 * $comissao;
+
+    return 'o valor da comissão é ' . $resultado;
+
+});
