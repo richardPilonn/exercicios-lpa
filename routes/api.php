@@ -73,3 +73,17 @@ Route::get('multiplicação' , function (Request $request){
     return $resultado;
 
 });
+
+Route::get('média' , function (Request $request){
+    
+    $notaUm = $request->input('number1');
+    $notaDois = $request->input('number2');
+    $notaTres = $request->input('number3');
+    $notaQuatro = $request->input('number4');
+    $notaCinco = $request->input('number5');
+
+    $resultado = ($notaUm + $notaDois + $notaTres + $notaQuatro + $notaCinco) /'5';
+
+    return $resultado;
+
+});
