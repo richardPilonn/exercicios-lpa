@@ -118,3 +118,17 @@ Route::get('retangulo' , function (request $request){
     return $resultado;
 
 });
+
+Route::get('loja' , function (Request $request){
+
+    $produto = $request->input('preço');
+    $desconto = $request->input('cupom');
+    
+    $resultado = $desconto / '100' * $produto;
+    $resultado2 = $produto - $resultado;
+
+    return 'o produto custa ' . $produto . ' com o desconto de ' .  $desconto . '% fica ' . $resultado2;
+
+
+});
+
