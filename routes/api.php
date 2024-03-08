@@ -52,3 +52,13 @@ return $resultado;
 
 
 });
+
+Route::get('divisão' , function (request $request){
+
+    $numeroOne = $request->input('number1');
+    $numeroTwo = $request->input('number2');
+
+    $resultado = $numeroOne / $numeroTwo ;
+
+    return $resultado;
+});
