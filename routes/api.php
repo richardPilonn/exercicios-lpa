@@ -181,3 +181,15 @@ Route::get('tempo' , function (Request $request){
     ' e possui um total de ' . $minutos . ' minutos, e um total de ' . $segundos . ' segundos';
 
 });
+
+Route::get('compras' , function (Request $request){
+
+    $produtos = $request->input('quant');
+    $preço = $request->input('preço');
+
+    $resultado = $produtos  * $preço;
+
+    return 'o preço do produto é ' . $preço . ' e a quantidade compra foi de ' . $produtos . 
+    ' dito isso o total da compra foi de ' . $resultado;
+
+});
