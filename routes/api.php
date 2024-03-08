@@ -146,3 +146,14 @@ Route::get('salario' , function (request $request){
 
 
 });
+
+Route::get('compra' , function (Request $request){
+
+    $valor = $request->input('value'); 
+
+    $resultado = $valor / 10;
+    $pontos = $resultado * 1;
+    
+    return ' a quantidade de pontos adquiridos é de ' . $pontos;
+
+});
