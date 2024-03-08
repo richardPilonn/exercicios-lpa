@@ -87,3 +87,13 @@ Route::get('média' , function (Request $request){
     return $resultado;
 
 });
+
+Route::get('divisão2' , function (request $request){
+
+    $numeroUm = $request->input('number1');
+    $numeroDois = $request->input('number2');
+
+    $resultado = $numeroDois / $numeroUm;
+
+    return $resultado;
+});
