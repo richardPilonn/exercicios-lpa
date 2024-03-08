@@ -107,3 +107,14 @@ Route::get('dobro' , function (request $request){
     return 'O dobro de ' . $numeroUm . ' é igual a: ' . $resultado;
 
 });
+
+Route::get('retangulo' , function (request $request){
+
+    $baseRetangulo = $request->input('num1');
+    $alturaRetangulo = $request->input('num2');
+
+    $resultado = $baseRetangulo * $alturaRetangulo;
+
+    return $resultado;
+
+});
