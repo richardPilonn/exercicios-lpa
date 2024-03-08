@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get("/frase", function(){
-    return 'Minha cidade é Presidente Epitácio';
-
+Route::get('receber/nome', function(Request $request){
+    $nome = $request->input('name');
+    return $nome;
 });
