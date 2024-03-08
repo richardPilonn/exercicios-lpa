@@ -97,3 +97,13 @@ Route::get('divisão2' , function (request $request){
 
     return $resultado;
 });
+
+Route::get('dobro' , function (request $request){
+
+    $numeroUm = $request->input('number1');
+
+    $resultado = $numeroUm * '2';
+
+    return 'O dobro de ' . $numeroUm . ' é igual a: ' . $resultado;
+
+});
