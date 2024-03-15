@@ -193,3 +193,16 @@ Route::get('compras' , function (Request $request){
     ' dito isso o total da compra foi de ' . $resultado;
 
 });
+
+Route::get('exemplo/condição' , function (Request $request){ 
+    $idade = $request->input('idade');
+    $retorno = '';
+    if($idade >= 18 ){
+        $retorno = 'maior de idade';
+    }
+    else { 
+        $retorno = "menor de idade";
+    }
+    return $retorno;
+
+});
