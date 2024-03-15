@@ -21,7 +21,7 @@ cetifique-se de ter os seguintes requisitos antes de começar a trabalhar nos ex
 
  1. Clone este repositório para seu ambiente de desenvolvimento local utilizando o comando: 
  ```
-git clone link https://github.com/richardPilonn/exercicios-lpa.git
+git clone https://github.com/richardPilonn/exercicios-lpa.git
 ```
  2.  Acesse o diretório do projeto:
  ```
