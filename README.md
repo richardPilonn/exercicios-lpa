@@ -31,13 +31,13 @@ cd exercícios-lpa
  ```
 composer update
 ```
- 4. Iniciando o servidor
+ 4. Acessar o Visual Studio Code 
  ```
-php artisan serve --port=80
-```
- 5. Acessar o Visual Studio Code 
-```
 code .
+```
+ 5. Iniciando servidor 
+```
+php artisan serve --port=80
 ```
  6. Importar o arquivo do Insomnia 
 
