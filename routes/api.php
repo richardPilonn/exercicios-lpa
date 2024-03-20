@@ -234,3 +234,17 @@ Route::get('acordar', function (Request $request){
     }
     return $retorno;
 });
+
+Route::get('im/par' , function (Request $request){
+
+    $numero = $request->input('num1');
+    
+    if($numero % 2 == 0){
+        return 'par';
+    } else {
+        return 'impar';
+    }
+    
+
+});
+
