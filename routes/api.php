@@ -244,7 +244,69 @@ Route::get('im/par' , function (Request $request){
     } else {
         return 'impar';
     }
-    
+});
+
+Route::get('verifica' , function (Request $request){
+
+    $numero1 = $request->input('num1');
+    if($numero1 <= 10){
+        $retorno = 'menor que 10';
+    }
+    else {
+        $retorno = 'maior que 10';
+    }
+    return $retorno ;
+});
+
+Route::get('temperatura' , function (Request $request){
+
+    $temp = $request->input('temp');
+    $retorno = '';
+
+    if ($temp <= 30 ){
+        $retorno = 'A temperatura atual é ' . $temp;
+ 
+    } else { 
+        $retorno = 'A temperatura é ' . $temp . ', está quente';
+    }
+    return $retorno;
+});
+
+Route::get('programa' , function (request $request){
+
+    $numero = $request->input('num1');
+    $retorno = '';
+
+    if($numero > 0){
+        $retorno = 'o numero é positivo';
+    } else if($numero == 0 ){
+        $retorno = 'o numero é igual a 0';
+    } else {
+        $retorno = 'o numero é negativo';
+    }
+    return $retorno;
+});
+
+Route::get('verifica/maior/numero', function (Request $request){
+
+    $numero1 = $request->input('numero1');
+    $numero2 = $request->input('numero2');
+
+    if($numero1 > $numero2){
+        return "O número " . $numero1 . " é maior que " . $numero2;
+    } else {
+        return "O número " . $numero1 . " é menor que " . $numero2;
+    }
 
 });
 
+Route::get('verifica/divisivel', function (Request $request){
+
+    $numero = $request->input('numero');
+    if($numero % 3 == 0){
+     return 'O número ' . $numero . " é divisivel por 3";
+    } else{
+     return 'O número ' . $numero . " não é divisivel por 3";
+    }
+ 
+ });
