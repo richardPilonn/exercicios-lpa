@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Route;
 
 
@@ -205,4 +206,31 @@ Route::get('exemplo/condição' , function (Request $request){
     }
     return $retorno;
 
+});
+
+
+Route::get('caixaRapido' ,  function (Request $request){
+
+    $itens = $request->input('itens');
+    $retorno = '';
+    if($itens <= 10 ){
+        $retorno = 'pode usar este caixa';
+    }
+    else {
+        $retorno = "não pode usar este caixa";
+    }
+    return $retorno;
+});
+
+Route::get('acordar', function (Request $request){
+
+    $horaQueAcordar = $request->input('horario');
+    $retorno = '';
+    if($horaQueAcordar <= 8 ){
+        $retorno = 'não esta atrasado';
+    }
+    else { 
+        $retorno = 'está atrasado';
+    }
+    return $retorno;
 });
