@@ -409,17 +409,16 @@ Route::get('lista/Exercício18', function (request $request) {
     $numero1 = $request->input('num1');
     $numero2 = $request->input('num2');
 
-   
-    
-        if ($numero1 == 0) {
-            return 'não é possível efetuar a divisão pois o primeiro número é zero';
-        } else if ($numero2 == 0) {
-           return  'não é possível efetuar a divisão pois o segundo número é zero';
-        } else {
-            $resultado = ($numero1 / $numero2);
-            return 'o resultado da divisão é ' . $resultado;
-        }
-    
+
+
+    if ($numero1 == 0) {
+        return 'não é possível efetuar a divisão pois o primeiro número é zero';
+    } else if ($numero2 == 0) {
+        return  'não é possível efetuar a divisão pois o segundo número é zero';
+    } else {
+        $resultado = ($numero1 / $numero2);
+        return 'o resultado da divisão é ' . $resultado;
+    }
 });
 
 Route::get('lista/Exercício19', function (request $request) {
@@ -427,19 +426,19 @@ Route::get('lista/Exercício19', function (request $request) {
     $numero1 = $request->input('num1');
     $numero2 = $request->input('num2');
 
-    if($numero1 * $numero2 > 100){
-        $resultado = $numero1 * $numero2 ;
-        return ' o resultado da multiplicação do numero ' . $numero1 . ' pelo numero ' . $numero2 . ' é maior que 100 e = ' . 
-        $resultado;
-    } else if ($numero2 * $numero1 > 100){
-        $resultado = $numero2 * $numero1 ;
-        return ' o resultado da multiplicação do numero ' . $numero2 . ' pelo numero ' . $numero1 . ' é maior que 100 e = ' . 
-        $resultado;
+    if ($numero1 * $numero2 > 100) {
+        $resultado = $numero1 * $numero2;
+        return ' o resultado da multiplicação do numero ' . $numero1 . ' pelo numero ' . $numero2 . ' é maior que 100 e = ' .
+            $resultado;
+    } else if ($numero2 * $numero1 > 100) {
+        $resultado = $numero2 * $numero1;
+        return ' o resultado da multiplicação do numero ' . $numero2 . ' pelo numero ' . $numero1 . ' é maior que 100 e = ' .
+            $resultado;
     } else {
         return 'a multiplicação dos numeros não resulta em um numero que seja maior que 100';
     }
 });
- 
+
 Route::get('lista/Exercício20', function (request $request) {
 
     $numero1 = $request->input('num1');
@@ -447,15 +446,84 @@ Route::get('lista/Exercício20', function (request $request) {
 
     $resultado2 = $numero1 + $numero2;
 
-    if(($numero1 + $numero2) % 2== 0){
+    if (($numero1 + $numero2) % 2 == 0) {
         ($resultado = $numero1 * $numero2);
-         return 'a soma dos numeros ' . $numero1 . ' + ' . $numero2 . ' = ' . $resultado2 . 
-        ', o resultado é par e a multiplação deles mesmo é  =  ' . $resultado;
-       } else {
+        return 'a soma dos numeros ' . $numero1 . ' + ' . $numero2 . ' = ' . $resultado2 .
+            ', o resultado é par e a multiplação deles mesmo é  =  ' . $resultado;
+    } else {
         ($resultado3 = $numero1 / $numero2);
-        return  'a soma dos numeros ' . $numero1 . ' + ' . $numero2 . ' = ' . $resultado2 . 
-        ', o resultado é impar e a divisão do ' . $numero1 . ' pelo ' . $numero2 . ' = ' . $resultado3;
-       }
+        return  'a soma dos numeros ' . $numero1 . ' + ' . $numero2 . ' = ' . $resultado2 .
+            ', o resultado é impar e a divisão do ' . $numero1 . ' pelo ' . $numero2 . ' = ' . $resultado3;
+    }
+});
 
+Route::get('Exercícios/complementares1', function (request $request) {
+
+    $numero1 = $request->input('num1');
+    $numero2 = $request->input('num2');
+    $numero3 = $request->input('num3');
+
+    $Media = ($numero1 + $numero2 + $numero3) / 3;
+
+    if ($Media >= 7) {
+        return 'o aluno foi aprovado, média = ' . $Media;
+    } else {
+        return 'O aluno não foi aprovado, média =' . $Media;
+    }
+});
+
+Route::get('Exercícios/complementares2', function (request $request) {
+
+    $renda = $request->input('renda');
+
+    if ($renda > 1900) {
+        if ($renda >  2800) {
+            if ($renda > 3700) {
+                $resultado1 = 22 / 100 * $renda;
+                $resultado2 = $renda - $resultado1;
+                return 'O valor do imposto de renda do usuário = ' . $resultado1 .
+                    ', sendo assim a renda é = ' . $resultado2;
+            } else {
+                $resultado5 = 7 / 100 * $renda;
+                $resultado6 = $renda - $resultado5;
+                return 'O valor do imposto de renda do usuário = ' . $resultado5 .
+                    ', sendo assim a renda é = ' . $resultado6;
+            }
+        } else {
+            $resultado3 = 15 / 100 * $renda;
+            $resultado4 = $renda - $resultado3;
+            return 'O valor do imposto de renda do usuário = ' . $resultado3 .
+                'sendo assim a renda é = ' . $resultado4;
+        }
+    } else
+        return 'O usuário está isento do imposto de renda pois sua renda (' . $renda . ') é menor que 1.900';
+});
+
+Route::get('Exercícios/complementares3', function (request $request) {
+
+    $Ano = $request->input('ano');
+
+    if ($Ano % 400 == 0) {
+        return 'O ano ' .  $Ano . ' é bissexto';
+    } else if ($Ano % 4 == 0){
+        return 'O ano ' .  $Ano . ' é bissexto';
+    } else {
+        return 'O ano ' .  $Ano . ' não é bissexto';
+    }
+});
+
+Route::get('Exercícios/complementares4', function (request $request) {
+    
+
+    $produto = $request->input('num1');
+    $valoroutrosprodutos = $request->input('num2');
+   
+    if(($valoroutrosprodutos + $produto) > 1000){
+        $resultado = 15 / 100 * $produto;
+        $resultado2 = $produto - $resultado;
+        return 'O valor do produto caiu pra ' . $resultado2 . ' com o desconto de ' . $resultado;
+    } else {
+        'o preço do produto se manteve o mesmo, não houve o desconto';
+    }
 
 });
