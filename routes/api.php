@@ -439,4 +439,23 @@ Route::get('lista/Exercício19', function (request $request) {
         return 'a multiplicação dos numeros não resulta em um numero que seja maior que 100';
     }
 });
+ 
+Route::get('lista/Exercício20', function (request $request) {
 
+    $numero1 = $request->input('num1');
+    $numero2 = $request->input('num2');
+
+    $resultado2 = $numero1 + $numero2;
+
+    if(($numero1 + $numero2) % 2== 0){
+        ($resultado = $numero1 * $numero2);
+         return 'a soma dos numeros ' . $numero1 . ' + ' . $numero2 . ' = ' . $resultado2 . 
+        ', o resultado é par e a multiplação deles mesmo é  =  ' . $resultado;
+       } else {
+        ($resultado3 = $numero1 / $numero2);
+        return  'a soma dos numeros ' . $numero1 . ' + ' . $numero2 . ' = ' . $resultado2 . 
+        ', o resultado é impar e a divisão do ' . $numero1 . ' pelo ' . $numero2 . ' = ' . $resultado3;
+       }
+
+
+});
