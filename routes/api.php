@@ -505,7 +505,7 @@ Route::get('Exercícios/complementares3', function (request $request) {
 
     if ($Ano % 400 == 0) {
         return 'O ano ' .  $Ano . ' é bissexto';
-    } else if ($Ano % 4 == 0){
+    } else if ($Ano % 4 == 0) {
         return 'O ano ' .  $Ano . ' é bissexto';
     } else {
         return 'O ano ' .  $Ano . ' não é bissexto';
@@ -513,17 +513,76 @@ Route::get('Exercícios/complementares3', function (request $request) {
 });
 
 Route::get('Exercícios/complementares4', function (request $request) {
-    
+
 
     $produto = $request->input('num1');
     $valoroutrosprodutos = $request->input('num2');
-   
-    if(($valoroutrosprodutos + $produto) > 1000){
+
+    if (($valoroutrosprodutos + $produto) > 1000) {
         $resultado = 15 / 100 * $produto;
         $resultado2 = $produto - $resultado;
         return 'O valor do produto caiu pra ' . $resultado2 . ' com o desconto de ' . $resultado;
     } else {
         'o preço do produto se manteve o mesmo, não houve o desconto';
     }
+});
 
+Route::get('Exercícios/complementares5', function (request $request) {
+
+
+    $altura = $request->input('altura');
+    $peso = $request->input('peso');
+
+    $IMC = $peso / ($altura * $altura);
+
+    if ($IMC > 18.5) {
+        if ($IMC > 24.9) {
+            if ($IMC > 29.9) {
+                if ($IMC > 34.9) {
+                    if ($IMC > 39.9) {
+                        return 'Obesidade Grau III ( ' . $IMC . ' kg/m2 )';
+                    } else {
+                        return 'Obesidade Grau II ( ' . $IMC . ' kg/m2 )';
+                    }
+                } else {
+                    return 'Obesidade Grau I ( ' . $IMC .  'kg/m2 )';
+                }
+            } else {
+                return 'Sobrepeso ( ' . $IMC . ' kg/m2 )';
+            }
+        } else {
+            return 'peso adequado ('  . $IMC . ' kg/m2 )';
+        }
+    } else {
+        return 'Abaixo do Peso ( ' . $IMC . ' kg/m2 )';
+    }
+});
+
+Route::get('Exercícios/complementares6', function (request $request) {
+
+
+    $salario = $request->input('salario');
+    $função = $request->input('função');
+
+    if ($função != 1) {
+        if ($função != 2) {
+            if($função != 3 ){
+                if($função == 4){
+                    $resultado7 = 20 / 100 * $salario;
+                    $resultado8 = $resultado7 + $salario;
+                    return 'Gerente, salario: ' . $salario . ', + a promoção de ' . $resultado7 . ', Salário final: ' . $resultado8;
+                }
+            } else 
+                $resultado5 = 15 / 100 * $salario;
+                $resultado6 = $resultado5 + $salario;
+                return 'Analista, salario: ' . $salario . ', + a promoção de ' . $resultado5 . ', Salário final: ' . $resultado6;
+        } else 
+            $resultado3 = 10 / 100 * $salario;
+            $resultado4 = $resultado3 + $salario;
+            return 'Técnico, salario: ' . $salario . ', + a promoção de ' . $resultado3 . ', Salário final: ' . $resultado4;
+    } else {
+        $resultado = 5 / 100 * $salario;
+        $resultado1 = $resultado + $salario;
+        return 'Operario, salario: ' . $salario . ', + a promoção de ' . $resultado . ', Salário final: ' . $resultado1;
+    }
 });
