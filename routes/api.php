@@ -586,3 +586,123 @@ Route::get('Exercícios/complementares6', function (request $request) {
         return 'Operario, salario: ' . $salario . ', + a promoção de ' . $resultado . ', Salário final: ' . $resultado1;
     }
 });
+
+//Escreva um programa que imprima os numeros de 1 a 10
+
+Route::get('laço' , function (Request $request) {
+
+    for($i=0; $i <=10; $i++){
+    echo $i . " ";
+    }
+});
+
+//Escreva um programa que imprima os numeros de 10 a 1
+
+Route::get('laço2' , function (Request $request) {
+
+    for($i=10; $i >= 1; $i--){
+        echo $i . " ";
+        }
+
+});
+
+//escreva um programa que exiba os numeros pares de 1 a 20
+
+Route::get('laço3' , function (Request $request) {
+    
+    for($i=1; $i <= 20; $i++){
+        if($i % 2 == 0 ){
+            echo $i . " ";
+        }
+        }
+
+});
+
+ //Escreva um programa que conte números pares
+
+Route::get('laço4' , function (Request $request) {
+
+    for($i=0; $i <=10; $i++){
+    echo $i * 2 . " ";
+    }
+});
+
+//Escreva um programa que conte quantos numero de 1 a 100
+// são divisiveis por 5
+
+Route::get('laço5' , function (Request $request) {
+    
+    $contador = 0;
+
+    for($i=1; $i <=100; $i++){
+        if($i % 5 == 0){
+         $contador++ . " ";
+        }
+        }
+        echo $contador;
+    });
+//escreva um progarama que calcule a soma dos numeros pares de 1 a 10
+
+Route::get('laço6' , function (Request $request) {
+
+    $soma = 0;
+
+    for($i=1; $i <=10; $i++){
+        if($i % 2 == 0){
+            $soma = $soma + $i;
+        }
+    }
+    echo $soma;
+
+});
+
+//Escreva um programa que exiba a soma dos números de 1 a 10
+Route::get('laço7' , function (Request $request) {
+$soma = 0;
+    for($i=0; $i <=10; $i++){
+     $soma = $soma + $i;
+    }
+    echo $soma . " ";
+});
+
+// Escreva um programa que exiba os números de 1 a 50 em ordem decrescente
+
+Route::get('laço8' , function (Request $request) {
+
+    for($i=50; $i >= 1; $i--){
+    echo $i . " ";
+    }
+});
+
+Route::get('laço9' , function (Request $request) {
+
+    $numero = $request->input('num');
+    for($i=0; $i <=10; $i++){
+    echo $numero . 'X' . $i . '=' . $i * $numero . '<br /> ';
+    }
+});
+
+Route::get('laço10' , function (Request $request) {
+$par = 0;
+$impar = 0;
+    for($i=10; $i <=75; $i++){
+    if($i % 2 == 0){
+        $par++;
+    } else {
+        $impar++;
+    }
+    }
+    echo $par . ' par '. " " . $impar . ' impar';
+
+});
+
+
+Route::get('laço11' , function (Request $request) {
+$soma = 0;
+    for($i=1; $i <=15; $i++){
+     $soma = $soma + $i;
+     
+    }
+    echo $soma / 5;
+});
+
