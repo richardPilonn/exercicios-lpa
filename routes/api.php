@@ -706,3 +706,39 @@ $soma = 0;
     echo $soma / 5;
 });
 
+Route::get('EX/pratica1' , function (Request $request) {
+    
+    $linhas = 5;
+
+    for ($i = 1; $i <= $linhas; $i++) {
+        for ($j = 1; $j <= $i; $j++) {
+            echo $i . " ";
+        }
+        echo "<br>";
+    }
+        
+    });
+    //Soma dos números pares: Escreva um programa que calcule a soma dos números pares de 1 a 100 utilizando um loop for.
+
+    Route::get('EX/pratica2' , function (Request $request) {
+
+        $par = 0;
+        for($i=1; $i<=100; $i++){
+            if($i % 2 == 0){
+                $par = $i + $par;
+
+            }
+        } echo $par . " ";
+});
+
+// Tabuada: Crie um programa que exiba a tabuada de multiplicação de um número escolhido
+// pelo usuário. Use um loop for para iterar de 1 a 10
+
+Route::get('EX/pratica3' , function (Request $request) {
+
+    $numero = $request ->input('num');
+    for($i = 0; $i<=10; $i++){
+        echo $numero . ' X ' . $i . ' = ' . $numero * $i . "<br>" ;
+    }
+});
+
