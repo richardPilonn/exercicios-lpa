@@ -742,3 +742,123 @@ Route::get('EX/pratica3' , function (Request $request) {
     }
 });
 
+// PAUSE -----------------------------------
+
+// ESTUDO SOBRE VETORES
+Route::get('vetor', function (){
+
+    $numero = [ ];
+    $numeros = [2,7,14,28,100];
+    $frutas = ['maça', 'banana', 'pera'];
+     
+     for($i = 0; $i<3; $i++){
+        echo $frutas [$i] . " ";
+        
+     }
+});
+
+Route::get('vetor2', function (){
+
+    $numero = [ ];
+    $numeros = [2,7,14,28,100];
+    $frutas = ['maça', 'banana', 'pera'];
+     
+
+    $i = 0;
+    while($i<3){
+        echo $frutas [$i] . " ";
+    $i++;
+    }
+});  
+Route::get('vetor3', function (){
+$numeros = [0, 5, 10, 15, 20 , 25, 30];
+$quantidade = count($numeros);
+$soma = 0;
+ 
+for ($i = 0; $i  < $quantidade; $i++){
+    if($i % 2 == 0){
+    $soma = $soma + $numeros [$i];
+}
+}
+echo $soma;
+
+});
+
+Route::get('vetor4', function (){
+  
+    $numeros = [10,11,15,4,5,6,9,1];
+    $frutas = ['uva', 'banana', 'abacate', 'mamão'];
+    $cont = $numeros [0];
+
+    for($i = 1; $i < count($numeros); $i++){
+       if($numeros[$i] > $cont){
+            $cont = $numeros[$i];
+
+        }  
+    } 
+    
+    echo 'maior numero é ' . $cont;
+});
+
+Route::get('vetor5', function (){
+    $numeros = [10,11,15,4,5,6,9,1];
+    $frutas = ['uva', 'banana', 'abacate', 'mamão'];
+
+    for($i = 0; $i < count($numeros); $i++){
+        if($numeros [$i] % 2 == 0){
+            echo $numeros [$i] . "<br />";
+        }
+    }
+});
+//exibir sexta feira
+Route::get('vetor5', function (){
+    $dias = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta'];
+    echo $dias [5];
+    
+});
+
+// ordenando os numeros em ordem crescente
+Route::get('vetor6', function (){
+
+    // Define the matrix
+    $numeros = [
+        [5, 4, 7],
+        [1, 3, 8],
+        [2, 9, 6]
+    ]; 
+    
+    
+    $quantidade = count($numeros);
+    
+    
+    $NM = [];
+    
+    
+    for ($i = 0; $i < $quantidade; $i++) {
+        for ($j = 0; $j < $quantidade; $j++) {
+            $NM[] = $numeros[$i][$j];
+        }
+    }
+    
+    
+    sort($NM);
+    
+    
+    $k = 0;
+    for ($i = 0; $i < $quantidade; $i++) {
+        for ($j = 0; $j < $quantidade; $j++) {
+            $numeros[$i][$j] = $NM[$k++];
+        }
+    }
+    
+    echo "ordem crescente:<br>";
+    for ($i = 0; $i < $quantidade; $i++) {
+        for ($j = 0; $j < $quantidade; $j++) {
+            echo $numeros[$i][$j] . " ";
+        }
+        echo "<br>";
+    }
+    
+    });
+    
+
