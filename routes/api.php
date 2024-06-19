@@ -861,4 +861,34 @@ Route::get('vetor6', function (){
     
     });
     
+// Crie um array de três frutas e exiba cada uma delas.
+Route::get('lista/exercicio/blocoNotas1', function (){
+$frutas = ['maça', 'banana', 'melon'];
+    for($i = 0; $i <= count($frutas); $i++){
+        echo $frutas [$i] . " ";
+    }
+});
+
+//Acesse e exiba o segundo elemento de um array de cores.
+Route::get('lista/exercicio/blocoNotas2', function (){
+
+    $cores = ['vermelho', 'azul', 'amarelo'];
+    echo $cores [1];
+});  
+
+//Modifique o primeiro elemento de um array de números para 10 e exiba o array.
+Route::get('lista/exercicio/blocoNotas3', function (){
+
+        $array = [10, 17 , 11, 7];
+
+        for($i =0; $i <= count($array); $i++){
+        echo $array [$i] . " ";
+        }
+});  
+
+//Conte e exiba o número de elementos em um array de itens.
+Route::get('lista/exercicio/blocoNotas4', function (){
+
+        $itens = ['mouse', 'teclado', 'tela', ]
+});  
 
