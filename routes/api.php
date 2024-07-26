@@ -886,9 +886,4 @@ Route::get('lista/exercicio/blocoNotas3', function (){
         }
 });  
 
-//Conte e exiba o número de elementos em um array de itens.
-Route::get('lista/exercicio/blocoNotas4', function (){
-
-        $itens = ['mouse', 'teclado', 'tela', ]
-});  
 
